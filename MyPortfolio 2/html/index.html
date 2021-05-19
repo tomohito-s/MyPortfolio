@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tomohito's|Webデザイン</title>
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="../images/favicon/Free_Sample_By_Wix.jpeg">
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/responsivestyle.css">
+  <link rel="stylesheet" href="../styles/addClass.css">
+</head>
+<body>
+  <!-- Loading画面 -->
+  <div id="splash">
+    <div id="splash_text"></div>
+    <div class="loader_cover loader_cover-up"></div>
+    <div class="loader_cover loader_cover-down"></div>
+  </div>
+  <!-- 以下コンテンツ部分 -->
+  <header id="home" class="scroll-point">
+    <nav id="FollowMenu" class="nav-visual">
+      <div class="nav-header">
+        <h1>Tomohito's</h1>
+        <div id="g-nav" class="nav-links">
+          <ul class="nav-links-menu">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#skill">SKILL</a></li>
+            <li><a href="#service">SERVICE</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="openbtn"><span></span><span></span><span></span></div><!-- sp用navボタン -->
+    <div class="circle-bg"></div><!-- sp用navボタンクリック時の背景用 -->
+    <div class="header-visual">
+      <h2 >Welcom to Tomohito's<br>Web Design</h2>      
+    </div>
+  </header>  
+  <main>
+    <section id="about" class="about-vw scroll-point">
+      <div class="about-header">
+        <h1 class="scrollanime_Down">ABOUT</h1>
+        <h2 class="scrollanime_Up">私について</h2>
+      </div>
+      <div class="about-contain">
+        <div class="about-pofile scrollanime_Right">
+          <div class="about-pofile-pic"></div>
+          <span>TomohitoSato</span>
+        </div>
+        <div class="about-discription scrollanime_Left">
+          <p>福岡県を拠点にWeb制作を行っているフリーランス。</p>
+          <p>釣り/温泉/バドミントン/アニメ漫画/コーヒー/美味しいものを食べる</p>
+          <p>ゆっくりとした時間を使いながらのんびり過ごしています。</p>
+          <p>友人のきっかけで始めたプログラミング。</p>
+          <p>PCを鮮やかに使いこなす姿に惹かれ自分もこの世界に興味を持ちました。</p>
+          <p>閲覧者に納得していただけるサービスを提供します。</p>
+          <p>Webサイトに関することはお気楽にご相談ください。</p>
+        </div>
+      </div>
+    </section>
+    <section id="skill" class="skill-vw scroll-point">
+      <h1 class="scrollanime_Down">SKILL</h1>
+      <div class="skill-menu">
+        <div class="skill-contain">
+          <div class="skill-contain-img scrollanime_Left"><img src="../images/icon/html-5.svg"></div>
+          <div class="skill-contain-img scrollanime_Left delayleft1"><img src="../images/icon/css-3.svg"></div>
+          <div class="skill-contain-img scrollanime_Left delayleft2"><img src="../images/icon/javascript.svg"></div>
+          <div class="skill-contain-img scrollanime_Left delayleft3"><img src="../images/icon/jquery.svg"></div>
+        </div>
+        <h2 class="scrollanime_Down">Skill-Bar</h2>
+        <canvas id="chart"></canvas>
+        <div class="chart-discription">
+          <p>JavaScript、jQueryは、</p>
+          <p>複雑になると少し時間かかります。</p>
+          <p>日々コーディングスキル鍛錬中。</p>
+        </div>
+      </div>
+    </section>
+    <section id="service" class="service-vw scroll-point">
+      <div class="service-header">
+        <h1 class="scrollanime_Down">SERVICE</h1>
+        <h2 class="scrollanime_Up">サービス内容</h2>
+      </div>
+      <div class="service-contain">
+        <div class="contain-menu">
+          <div class="menu-icon scrollanime_Down"><img src="../images/icon/program.svg"></div>
+          <div class="service-discription scrollanime_Down">
+            <h3>Web制作</h3>
+            <p>シングルカラム・２カラムのページ制作等、</p>
+            <p>目的やテーマに沿ってレイアウトしていきます。</p>
+            <p>お客さまの思い描くようなサイトを作ります。</p>
+          </div>
+        </div>
+        <div class="contain-menu">
+          <div class="menu-icon scrollanime_Down"><img src="../images/icon/responsive.svg"></div>
+          <div class="service-discription scrollanime_Down">
+            <h3>レスポンシブ対応</h3>
+            <p>スマホが当たり前の時代です。</p>
+            <p>レスポンシブ（モバイル閲覧対応）で開発します。</p>
+            <p>スマホでも見やすいようにします。</p>
+          </div>
+        </div>
+        <div class="contain-menu">
+          <div  class="menu-icon scrollanime_Down"><img src="../images/icon/web.svg"></div>
+          <div class="service-discription scrollanime_Down">
+            <h3>保守・運用</h3>
+            <p>更新しやすいように必要のないプラグインは</p>
+            <p>入れないように心がけています。</p>
+            <p>サイト作成後も可能な範囲でサポート致します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="contact" class="contact-vw scroll-point">
+    <div class="contact-heder">
+      <h1 class="scrollanime_Down">CONTACT</h1>
+      <h2 class="scrollanime_Up">ご依頼・お問い合わせ</h2>
+    </div>
+    <div class="contact-contain">
+      <p>お気軽に下記のメールアドレスまでご連絡ください。</p>
+      <p>ご相談・ご依頼お待ちしております。</p>
+    </div>
+    <div class="contact-maill-ad">
+      <i class="fa fa-envelope"></i>
+      <a href="">xxxx@tomohito.com</a>
+    </div>
+    <div class="contact-maill-discription">
+      <ul>
+        <li>3日以内にご返信いたします。</li>
+        <li>営業目的のメール、圧縮ファイルが添付されているメールには返信しておりません。</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../script/jquery-3.6.0.min.js"></script>
+  <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery-inview@1.1.2/jquery.inview.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <script src="../script/script.js"></script>
+
+</body>
+</html>

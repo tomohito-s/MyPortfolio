@@ -1,0 +1,248 @@
+/* ---------- Loading画面のfadeaut ---------- */
+/*上の画面*/
+.loader_cover-up {
+  transform-origin: center top;
+}
+
+/*下の画面*/
+.loader_cover-down {
+  position: absolute;
+  bottom: 0;
+  transform-origin: center bottom;
+}
+/*クラス名がついたらY軸方向に0*/
+.coveranime {
+  transform: scaleY(0);
+}
+
+
+/*1.フェードインアニメーションの指定*/
+.scrollanime_Up {
+  opacity: 0;
+} 
+.scrollanime_Right {
+  opacity: 0;
+} 
+.scrollanime_Down {
+  opacity: 0;
+} 
+.scrollanime_Left {
+  opacity: 0;
+} 
+
+.fadeInUp {
+    animation-name: fadeInUp;
+    animation-duration: 2s;
+    transition-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    -moz-animation-name: fadeInUp;
+    -moz-animation-duration: 2s;
+    -moz-animation-transition-timing-function: ease-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-name: fadeInUp;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-transition-timing-function: ease-out;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-name: fadeInUp;
+    -o-animation-duration: 2s;
+    -o-animation-transition-timing-function: ease-out;
+    -o-animation-fill-mode: forwards;
+    -ms-animation-name: fadeInUp;
+    -ms-animation-duration: 2s;
+    -ms-animation-transition-timing-function: ease-out;
+    -ms-animation-fill-mode: forwards;   
+}
+
+@keyframes fadeInUp {
+    0% {
+    opacity: 0;
+    transform: translateY(20px);         
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+@-moz-keyframes fadeInUp {
+    0% {
+    opacity: 0;
+    transform: translateY(20px);         
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+@-webkit-keyframes fadeInUp {
+    0% {
+    opacity: 0;
+    transform: translateY(20px);         
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+@-o-keyframes fadeInUp {
+    0% {
+    opacity: 0;
+    transform: translateY(20px);         
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+@-ms-keyframes fadeInUp {
+    0% {
+    opacity: 0;
+    transform: translateY(20px);         
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+
+.fadeInDown {
+    animation-name: fadeInDown;
+    animation-duration: 2s;
+    transition-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInDown {
+    0% {
+    opacity: 0;
+    transform: translateY(-20px);         
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+.fadeInLeft {
+    animation-name: fadeInLeft;
+    animation-duration: 4s;
+    transition-timing-function: ease-out;
+    animation-fill-mode: forwards;
+
+    /* -moz-animation-name: fadeInLeft;
+    -moz-animation-duration: 4s;
+    -moz-transition-timing-function: ease-out;
+    -moz-animation-fill-mode: forwards;
+
+    -webkit-animation-name: fadeInLeft;
+    -webkit-animation-duration: 4s;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-animation-fill-mode: forwards;
+
+    -o-animation-name: fadeInLeft;
+    -o-animation-duration: 4s;
+    -o-transition-timing-function: ease-out;
+    -o-animation-fill-mode: forwards;
+
+    -ms-animation-name: fadeInLeft;
+    -ms-animation-duration: 4s;
+    -ms-transition-timing-function: ease-out;
+    -ms-animation-fill-mode: forwards; */
+}
+@keyframes fadeInLeft {
+    0% {
+    opacity: 0;
+    transform: translateX(-20px);         
+    }
+    100% {
+    opacity: 1;
+    transform: translateX(0);
+    }
+}
+/* @-moz-keyframes fadeInLeft {
+    0% {
+    opacity: 0;
+    transform: translateX(-20px);         
+    }
+    100% {
+    opacity: 1;
+    transform: translateX(0);
+    }
+}
+@-webkit-keyframes fadeInLeft {
+    0% {
+    opacity: 0;
+    transform: translateX(-20px);         
+    }
+    100% {
+    opacity: 1;
+    transform: translateX(0);
+    }
+}
+@-o-keyframes fadeInLeft {
+    0% {
+    opacity: 0;
+    transform: translateX(-20px);         
+    }
+    100% {
+    opacity: 1;
+    transform: translateX(0);
+    }
+}
+@-ms-keyframes fadeInLeft {
+    0% {
+    opacity: 0;
+    transform: translateX(-20px);         
+    }
+    100% {
+    opacity: 1;
+    transform: translateX(0);
+    }
+} */
+
+.fadeInRight {
+    animation-name: fadeInRight;
+    animation-duration: 2s;
+    transition-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInRight {
+    0% {
+    opacity: 0;
+    transform: translateX(20px);         
+    }
+    100% {
+    opacity: 1;
+    transform: translate(0);
+    }
+}
+ 
+
+/*2.時間の指定*/
+
+.delayleft1 {
+  animation-delay: 1s;
+  /* -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  -ms-animation-delay: 1s; */
+}
+.delayleft2 {
+  animation-delay: 2s;
+  /* -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  -o-animation-delay: 2s;
+  -ms-animation-delay: 2s; */
+}
+.delayleft3 {
+  animation-delay: 1.2s;
+  /* -moz-animation-delay: 1.2s;
+  -webkit-animation-delay: 1.2s;
+  -o-animation-delay: 1.2s;
+  -ms-animation-delay: 1.2s; */
+}
+
+
+
+
+
+
