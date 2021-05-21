@@ -1,7 +1,5 @@
-
-
+/* ========== 縦向き ========== */
 /* --------------- header --------------- */
-
 @media screen and (max-width:767px) {
 
   .nav-visual {
@@ -131,55 +129,16 @@
 
 }
 
-@media screen and (min-width:768px) and (max-width:950px) {
-  /* .header-visual {
-    background-image: none;
-  }
-
-  .header-visual::before {
-    content:"";
-    display:block;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:-2;
-    width:100%;
-    height:100vh;
-    background-repeat:no-repeat;
-    background-position:center;
-    background-image:url(../images/job/pattern-3232784_1920-min.jpg);
-    background-size:cover;
-  }
-   */
-}
 
 @media screen and (min-width:951px) and (max-width:1200px) {
   .nav-links-menu li a {
     font-size: 20px;
   }
 
-  /* .header-visual {
-    background-image: none;
-  }
-
-  .header-visual::before {
-    content:"";
-    display:block;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:-2;
-    width:100%;
-    height:100vh;
-    background-repeat:no-repeat;
-    background-position:center;
-    background-image:url(../images/job/pattern-3232784_1920-min.jpg);
-    background-size:cover;
-    } */
-
   .header-visual h2 {
     font-size: 44px;
   }
+
 }
 
 
@@ -187,7 +146,7 @@
 
 @media screen and (max-width:767px) {
   .about-vw {
-    height: 140vh;
+    height: 100vh;
   }
   
   .about-contain {
@@ -217,114 +176,108 @@
     text-shadow: 1px 2px 2px;
   }
   
-  
   .about-discription {
     width: 80%;
-    /* transform: translateY(10px); */
   }
   
   .about-header h1 {
     font-size: 32px;
-    /* transform: translateY(5px); */
     padding: 4px 6px;
   }
   
   .about-header h2 {
     font-size: 16px;
     padding: 4px 6px;
-    /* transform: translateY(30px); */
   }
-  
   
   .about-discription p {
     color: #faebd7;
-    padding: 8px 0;
+    padding: 0 0 10px 0;
     font-size: 14px;
   }  
   
 }
 
-@media screen and (min-width:768px) and (max-width:950px) {
+@media screen and (min-width:768px) and (max-width:950px)  {
+  .about-vw {
+    height: 100vh;
+  }
 
-.about-vw {
-  height: 100vh;
-}
+  .about-contain {
+    width: 100%;
+    height: 80vh;
+    flex-direction: column;
+  }
 
-.about-contain {
-  width: 100%;
-  height: 80vh;
-  flex-direction: column;
-}
+  .about-discription {
+    width: 90%;
+    transform: translateY(10px);
+  }
 
-.about-discription {
-  width: 90%;
-  transform: translateY(10px);
-}
+  .about-header h1 {
+    font-size: 40px;
+  }
+  
+  .about-header h2 {
+    font-size: 20px;
+  }
 
-.about-header h1 {
-  font-size: 40px;
- }
- 
- .about-header h2 {
-   font-size: 20px;
- }
-
-.about-discription p {
-  padding: 8px 0;
-  font-size: 16px;
-  text-align: center;
-}  
+  .about-discription p {
+    padding: 8px 0;
+    font-size: 16px;
+    text-align: center;
+  }  
 
 }
 
 @media screen and (min-width:951px) and (max-width:1200px) {
-.about-vw {
-  height: 100vh;
-}
+  .about-vw {
+    height: 100vh;
+  }
 
 
-.about-contain {
-  flex-direction: column;
-}
+  .about-contain {
+    flex-direction: column;
+  }
 
-.about-pofile {
-  flex-direction: row;
-  width: 80vw;
-  height: 40vh;
-}
+  .about-pofile {
+    flex-direction: row;
+    width: 80vw;
+    height: 40vh;
+  }
 
-.about-pofile-pic {
-  width: 300px;
-  height: 300px;
-}
+  .about-pofile-pic {
+    width: 300px;
+    height: 300px;
+  }
 
-.about-pofile-pic::after {
-  filter: blur(8px);
-  box-shadow: 5px 5px 1px 2px;
-}
+  .about-pofile-pic::after {
+    filter: blur(8px);
+    box-shadow: 5px 5px 1px 2px;
+  }
 
-.about-contain span {
-  font-size: 32px;
-}
+  .about-contain span {
+    font-size: 32px;
+  }
 
-.about-discription {
-  width: 90%;
-  transform: translateY(10px);
-}
+  .about-discription {
+    width: 90%;
+    transform: translateY(10px);
+  }
 
-.about-header h1 {
- font-size: 40px;
-}
+  .about-header h1 {
+  font-size: 40px;
+  }
 
-.about-header h2 {
-  font-size: 20px;
-}
+  .about-header h2 {
+    font-size: 20px;
+  }
 
-.about-discription p {
-  padding: 8px 0;
-  font-size: 18px;
-  text-align: center;
-}  
+  .about-discription p {
+    padding: 8px 0;
+    font-size: 18px;
+    text-align: center;
+  }  
 
 }
 
@@ -332,26 +285,8 @@
 /* ------------------- skill -------------------- */
 
 @media screen and (max-width:767px) {
-  /* .skill-vw {
-    background-image: none;
-  }
-
-  .skill-vw::before {
-    content:"";
-    display:block;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:-1;
-    width:100%;
-    height: 120vh;
-    background-image: url(../images/job/tablet-313002_1920-min.jpg);
-    background-position: 30%;
-    background-size: cover;
-    background-repeat: no-repeat;
-  } */
-
   .skill-vw {
+    height: 100vh;
     background-position-x: 23%;
   }
   
@@ -385,6 +320,7 @@
 
 }
 
+
 @media screen and (min-width:768px) and (max-width:950px) {
  
   .skill-vw {
@@ -402,7 +338,6 @@
     padding: 10px 0;
   }
   
-    
   .skill-vw h1 {
     font-size: 40px;
   }
@@ -415,8 +350,8 @@
     font-size: 18px;
     padding-bottom: 10px;
   }
-}
 
+}
 
 
 @media screen and (min-width:951px) and (max-width:1200px) {
@@ -446,6 +381,7 @@
     font-size: 18px;
     padding-bottom: 10px;
   }
+
 }
 
 
@@ -453,7 +389,7 @@
 
 @media screen and (max-width:767px) {
   .service-vw {
-    height: 165vh;
+    height: 135vh;
     background-image: none;
   }
 
@@ -471,10 +407,10 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
+
   .service-contain {
    width: 100%;
   }
-  
   
   .contain-menu {
     margin: 10px auto;
@@ -536,6 +472,7 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
+
   .service-header {
     height: auto;
   }
@@ -579,9 +516,8 @@
     font-size: 18px;
   }
 
-
-
 }
+
 
 @media screen and (min-width:951px) and (max-width:1200px) {
     .service-vw {
@@ -644,46 +580,148 @@
 
 
 @media screen and (max-width:767px) {
-.contact-maill-discription {
-  width: 75%;
-}
-.contact-vw h1 {
-  font-size: 32px;
-}
+  .contact-maill-discription {
+    max-width: 60%;
+  }
+
+  .contact-vw h1 {
+    font-size: 32px;
+  }
+
+  .contact-vw h2 {
+    font-size: 16px;
+  }
+
 }
 
 
 @media screen and (min-width:768px) and (max-width:1200px) {
-.contact-contain {
-  width: 80%;
+  .contact-contain {
+    width: 80%;
+  }
+
+    .contact-maill-discription {
+    width: 75%;
+  }
+
+  .fa-envelope {
+    font-size: 32px;
+  }
+
+  .contact-maill-ad a {
+    font-size: 20px;
+  }
+
+  .contact-maill-discription ul li {
+    font-size: 18px;
+  }
+
+  .contact-vw h1 {
+    font-size: 40px;
+  }
+
+  .contact-vw h2 {
+    font-size: 20px;
+  }
+
+  .contact-vw p {
+    font-size: 18px;
+  }
+
 }
+
+
+/* モバイル用横向き対応 */
+@media screen and (max-height:420px) {
+  .about-vw {
+    height: 150vh;
+  }
+
+  .about-contain {
+    flex-direction: row-reverse;
+  }
+
+  .about-pofile {
+    height: 80vh;
+    width: 40vw;
+    padding: 2%;
+  }
+
+  .about-pofile-pic {
+    width: 200px;
+    height: 200px;
+    background-position-x: 54%;
+    background-position-y: 24%;
+  }
+
+  .about-contain span {
+    font-size: 30px;
+  }
+
+  .about-discription p {
+    padding: 8px 20px;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .about-contain span {
+    font-size: 30px;
+  }
+
+  .skill-vw {
+    height: 220vh;
+  }
+
+  .skill-contain img {
+    width: 80px;
+    height: 80px;
+  }
+
+  #chart {
+    max-height: 100vh !important;
+  }
+
+  .service-vw {
+    height: 220vh;
+  }
+
+  .contact-vw p {
+    font-size: 16px;
+  }
+
+  .fa-envelope {
+    font-size: 20px;
+  }
+
+  .contact-maill-ad a {
+    font-size: 16px;
+  }
+
+  .contact-maill-discription ul li {
+    font-size: 16px;
+  }
+
+}
+
+
+/* モバイル小さい用 */
+@media screen and (min-height:421px) and (max-height:700px) {
+  
+  .about-vw {
+    height: 140vh;
+  }
+
+  .skill-vw {
+    height: 120vh;
+  }
+
+  .service-vw {
+    height: 175vh;
+  }
 
   .contact-maill-discription {
-  width: 75%;
-}
-
-.fa-envelope {
-  font-size: 32px;
-}
-
-.contact-maill-ad a {
-  font-size: 20px;
-}
-
-.contact-maill-discription ul li {
-  font-size: 18px;
-}
-
-.contact-vw h1 {
-  font-size: 40px;
-}
-
-.contact-vw h2 {
-  font-size: 20px;
-}
-
-.contact-vw p {
-  font-size: 18px;
-}
+    max-width: 70%;
+  }
 
 }
+
