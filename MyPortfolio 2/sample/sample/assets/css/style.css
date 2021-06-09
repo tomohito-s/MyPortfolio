@@ -1,0 +1,820 @@
+@charset "utf-8";
+
+body{
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+/*========= sp用ボタン ===============*/
+.openbtn1{
+  position:fixed;
+  z-index: 9999;/*ボタンを最前面に*/
+  top:10px;
+  right: 20px;
+  cursor: pointer;
+  pointer-events: none;
+  width: 50px;
+  height:50px;
+  opacity: 0;
+}
+  
+/*×に変化*/  
+.openbtn1 span{
+  display: inline-block;
+  transition: all .4s;
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #666;
+  width: 45%;
+}
+
+.openbtn1 span:nth-of-type(1) {
+  top:15px; 
+}
+
+.openbtn1 span:nth-of-type(2) {
+  top:23px;
+}
+
+.openbtn1 span:nth-of-type(3) {
+  top:31px;
+}
+
+.openbtn1.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.openbtn1.active span:nth-of-type(3){
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+/*========= ドロップダウンのためのCSS ===============*/
+
+/*==ナビゲーション全体の設定*/
+#header{
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  background: rgba(250, 250, 250, 0.5);
+}
+
+#header h1{
+  color: #333;
+  align-self: center;
+}
+
+nav{
+  width: 100%;
+  color: #333;
+  text-align: center;
+}
+
+/*ナビゲーションを横並びに*/
+nav ul{
+  /*2階層目の基点にするためrelativeを指定*/
+  position: relative;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*2階層目以降は横並びにしない*/
+nav ul ul{
+  display: block;
+}
+
+/*ナビゲーションのリンク設定*/
+nav ul li a{
+  /*矢印の基点にするためrelativeを指定*/
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: #999;
+  padding:20px 45px;
+  transition:all .3s;
+}
+
+nav ul li li a{
+  padding:20px;
+}
+
+nav ul li a:hover{
+  color:#fff; 
+}
+
+/*==矢印の設定*/
+
+/*2階層目を持つliの矢印の設定*/
+
+nav ul li.has-child > a::before{
+  content:'';
+  position: absolute;
+  left:15px;
+  top:25px;
+  width:6px;
+  height:6px;
+  border-top: 2px solid #999;
+  border-right:2px solid #999;
+  transform: rotate(135deg);
+}
+
+/*==2階層目以降の画像設定*/
+
+nav ul li.has-child img{
+  max-width: 100%;
+  height: auto;
+  transition: all .5s;
+  vertical-align: bottom;
+}
+
+/*hoverしたら画像拡大*/
+nav ul li.has-child img:hover{
+  transform: scale(1.2);
+}
+
+nav ul li.has-child dt{
+  overflow: hidden;
+  height: 20vh;
+  margin:0 0 20px 0;
+}
+
+@media screen and (max-width:1200px){
+nav ul li.has-child dt{
+  height: 12vh;
+}
+  
+}
+
+/*== 2層目の設定 */
+
+nav li.has-child ul{
+  /*絶対配置で位置を指定*/
+  position: absolute;
+  left:5%;
+  top:58px;
+  z-index: 4;
+  /*子要素を横並びに*/    
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /*形状を指定*/
+  background:#888;
+  width:90%;
+  /*はじめは非表示*/
+  visibility: hidden;
+  opacity: 0;
+  /*アニメーション設定*/
+  transition: all .3s;
+}
+
+/*hoverしたら表示*/
+nav li.has-child:hover > ul{
+  visibility: visible;
+  opacity: 1;
+}
+
+/*各ナビゲーション横幅*/
+nav li.has-child ul li{
+  width:20%;
+}
+
+/*ナビゲーションaタグの形状*/
+nav li.has-child ul li a{
+  color: #fff;
+}
+
+nav li.has-child ul li a:hover,
+nav li.has-child ul li a:active{
+  background:#3577CA;
+}
+
+
+
+
+/*==768px以下の形状*/
+@media screen and (max-width:768px){
+  .openbtn1{
+    pointer-events: fill;
+    opacity: 1;
+    top: 5px;
+  }
+
+  #header{
+    flex-direction: column;
+  }
+
+  #header h1{
+    width: 100%;
+    font-size: 42px;
+    height: 7vh;
+  }
+
+  nav{
+    pointer-events: none;
+    background: none;
+    opacity: 0;
+  }
+
+  nav ul{
+    z-index: 999;
+    display: block;
+    top:10%;
+    padding: 0 60px;
+  }
+
+  nav li.has-child ul{
+    position: relative;
+    left:0;
+    top:0;
+    width:100%;
+    visibility:visible;/*JSで制御するため一旦表示*/
+    opacity:1;/*JSで制御するため一旦表示*/
+    display: none;/*JSのslidetoggleで表示させるため非表示に*/
+    transition:none;/*JSで制御するためCSSのアニメーションを切る*/
+  }
+    
+  nav li.has-child ul li{
+    width:100%;
+    text-align: left;
+  }
+  
+  nav li.has-child ul li dl{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav li.has-child ul li dt{
+    width:30%;
+    height: auto;
+    margin: 0;
+  }
+
+  nav li.has-child ul li dd{
+    width:64%;      
+  }
+  
+/*矢印の位置と向き*/
+  
+  nav ul li.has-child > a::before{
+    top:17px;
+    left:20px;
+    transform: rotate(135deg);
+  }
+    
+  nav ul li.has-child.active > a::before{
+    transform: rotate(-45deg);
+  }
+
+  #g-nav{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position:fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+    top:-120%;
+    left:0;
+    width:100%;
+    height: 100vh;/*ナビの高さ*/
+    background: rgba(200, 200, 200, 0.9);
+    /*動き*/
+    transition: all 0.6s;
+  }
+
+  /*アクティブクラスがついたら位置を0に*/
+  #g-nav.panelactive{
+    top: 0;
+    opacity: 1;
+    pointer-events: fill;
+  }
+
+  /*リストのレイアウト設定*/
+  #g-nav li{
+    text-align: center; 
+  }
+
+  #g-nav li a{
+    color: #333;
+    padding:10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    border-bottom:1px solid #fff;
+  }
+
+}
+
+/*上に上がる動き*/
+
+#header.UpMove{
+  position: fixed;
+  animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime{
+  from {
+    opacity: 1;
+  transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+  transform: translateY(-100px);
+  }
+}
+
+/*下に下がる動き*/
+
+#header.DownMove{
+  animation: DownAnime 0.5s forwards;
+}
+
+@keyframes DownAnime{
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.main-top{
+  height: 100vh;
+  background-image: url(../img/girl-1246525_1920.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.concept-description{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn a{
+  display: block;
+  width: 50%;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.btn:hover {
+  color: rgb(13 110 253 / 43%);
+  transition: all 0.5s;
+}
+
+.btn::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: rgb(255, 100, 255);
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.btn:hover::after {
+  width: 100px;
+}
+
+
+
+.staff-bg{
+  width: 90%;
+  height: 40vh;
+  margin: 0 auto;
+  background-image: url(../img/staff.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.staff-discription{
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.btn.col-6.align-self-end a{
+  margin-right: 0;
+  text-align: right;
+}
+.btn.col-6.align-self-end a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: rgb(255, 100, 255);
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+
+
+#hair{
+  background: aliceblue;
+}
+
+#hair .row{
+  height: 100vh;
+}
+
+#hair h2{
+  text-align: center;
+}
+
+/*スライダーのためのcss*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+  width: 94%;
+  margin:0 auto;
+}
+
+.slider img {
+  width:50vw;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+  height:auto;
+}
+
+.slider .slick-slide {
+transform: scale(0.8);/*左右の画像のサイズを80%に*/
+transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+opacity: 0.5;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+  position: absolute;/*絶対配置にする*/
+  top: 42%;
+  cursor: pointer;/*マウスカーソルを指マークに*/
+  outline: none;/*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid #666;/*矢印の色*/
+  border-right: 2px solid #666;/*矢印の色*/
+  height: 15px;
+  width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+  left: -1.5%;
+  transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+  right: -1.5%;
+  transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+  text-align:center;
+  margin:20px 0 0 0;
+}
+
+.slick-dots li {
+  display:inline-block;
+  margin:0 5px;
+}
+
+.slick-dots button {
+  padding: 0;
+  border: none;
+  color: transparent;
+  outline: none;
+  width:8px;/*ドットボタンのサイズ*/
+  height:8px;/*ドットボタンのサイズ*/
+  display:block;
+  border-radius:50%;
+  background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+  background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+#menu{
+  background: rgb(240, 241, 255);
+}
+#menu .container{
+  white-space: pre-line;
+}
+
+#menu h2{
+  justify-content: center;
+  padding: 30px 0;
+}
+
+#menu ul li{
+  list-style: none;
+}
+
+.reserv-discription{
+  width: 90%;
+  height: 50vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.access-discription{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#access .map{
+  height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
+.access-bg{
+  width: 90%;
+  height: 40vh;
+  margin: 0 auto;
+  background-image: url(../img/access.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#footer{
+  font-size: 14px;
+  color: #fff;
+  background: #333;
+}
+
+
+
+@media screen and (max-width: 575px){
+  #concept .row{
+    height: 60vh;
+  }
+
+  #concept .col-lg-8{
+    display: flex;
+    height: 60vh;
+  }
+
+  .concept-description {
+    width: 85%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    font-size: 14px;
+}
+
+  #concept h2{
+    text-align: center;
+  }
+
+  #staff.comtainer{
+    height: 110vh;
+  }
+
+  #staff .col-lg-6{
+    display: flex;
+    height: 60vh;
+  }
+
+  #staff h2{
+    text-align: center;
+  }
+
+  .staff-discription{
+    width: 85%;
+    height: 60vh;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    font-size: 14px;
+  }
+
+  #hair .row {
+    height: 70vh;
+  }
+
+  .reserv-discription{
+    width: 90%;
+    height: 50vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .access-discription{
+    font-size: 14px;
+    height: 50vh;
+    align-items: center;
+  }
+
+  #access h2{
+    text-align: center;
+  }
+}
+
+@media screen and  (min-width: 576px) and (max-width: 767px) {
+  #concept .row{
+    height: 60vh;
+  }
+
+  #concept h2{
+    text-align: center;
+  }
+
+  .staff-discription{
+    height: 100vh;
+    margin: 0 auto;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  #hair .row {
+    height: 80vh;
+  }
+
+  .access-discription{
+    height: 40vh;
+    align-items: center;
+  }
+
+  #access h2{
+    text-align: center;
+  }
+
+}
+
+@media screen and  (min-width: 768px) and (max-width: 992px){
+  #concept .row{
+    height: 50vh;
+  }
+
+  #concept .col-lg-8{
+    display: flex;
+    height: 30vh;
+  }
+
+  .concept-description {
+    width: 85%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+  }
+
+  .staff-bg{
+    height: 25vh;
+  }
+
+  .staff-discription{
+    justify-content: center;
+  }
+
+  #hair .row {
+    height: 80vh;
+  }  
+
+  .reserv-discription{
+    height: 40vh;
+  }
+
+  .access-discription{
+    height: 40vh;
+    align-items: center;
+  }
+
+  #access h2{
+    text-align: center;
+  }
+
+}
+
+@media screen and  (min-width: 993px) and (max-width: 1200px){
+  #concept .row{
+    height: 50vh;
+  }
+
+  #concept .col-lg-8{
+    display: flex;
+    height: 20vh;
+  }
+
+  .concept-description {
+    width: 85%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+  }
+
+  .staff-bg{
+    height: 30vh;
+  }
+
+  .staff-discription{
+    justify-content: center;
+  }
+
+  #hair .row {
+    height: 80vh;
+  }
+
+  .reserv-discription{
+    height: 40vh;
+  }
+
+}
+
+@media screen and (min-width: 1201px){
+  #concept .row{
+    height: 70vh;
+  }
+
+  #concept .col-lg-8{
+    display: flex;
+    height: 30vh;
+  }
+
+  .concept-description {
+    width: 85%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+  }
+
+  .reserv-discription{
+    height: 40vh;
+  }
+
+}
+
+@media screen and  (max-height: 420px){
+  #concept .row{
+    height: 90vh;
+  }
+
+  .concept-description{
+    font-size: 14px;
+  }
+
+  #staff .col-lg-6{
+    display: flex;
+    height: 90vh;
+  }
+
+  .staff-bg{
+    width: 70vh;
+    height: 50vh;
+  }
+
+  .staff-discription{
+    height: 100vh;
+    font-size: 14px;
+  }
+
+  #hair .row {
+    height: 100vh;
+  }
+
+  .reserv-discription{
+    height: 70vh;
+    font-size: 14px;
+  }
+
+  .access-discription{
+    height: 80vh;
+  }
+
+  #access .map{
+    height: 80vh;
+  }
+
+  .access-bg{
+    width: 70%;
+    height: 70vh;
+  }
+}
