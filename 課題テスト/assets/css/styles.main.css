@@ -91,6 +91,7 @@ ul {
 /*リンク（全般）設定
 ---------------------------------------------------------------------------*/
 a {
+  font-weight: normal;
 	color: #555;		/*リンクテキストの色*/
 	transition: 0.5s;	/*マウスオン時の移り変わるまでの時間設定。0.5秒。*/
 }
@@ -151,7 +152,9 @@ header h1 img {
 }
 
 .menubar li a {
-	display:  block;text-decoration: none;
+	display:  block;
+  text-decoration: none;
+  font-weight: bold;
 	color: #333;
 	text-align: center;
 	padding: 10px 0 15px;
@@ -263,11 +266,13 @@ left:4px;
 }
 
 @media screen and (max-width:767px) {
+
   header h1 img {
     display: none;
   }
 
   .menubar {
+    position: static;
     background: none;
     border: none;
   }
@@ -315,6 +320,7 @@ left:4px;
     transform: translate(-50%,-50%);
     opacity: 0;
     pointer-events: none;
+    flex-direction: column;
   }
 
   /*背景が出現後にナビゲーションを表示*/
@@ -358,7 +364,6 @@ left:4px;
   }
 
 }
-
 
 /*********************************
 4. main
@@ -615,4 +620,125 @@ left:4px;
 
 .footer_nav li a:hover {
 	color: #f19ee6;
+}
+
+
+/*********************************
+7. 個別記事（single.php）
+*********************************/
+.pageTitle {
+  padding: 30px 0;
+  text-align: center;
+  background: #70462E;
+  *zoom: 1;
+  color: #fff;
+  display: block;
+  text-align: center;
+  font-weight: normal;
+  font-size: 28px;
+}
+
+.pageTitle span {
+  display: block;
+  text-align: center;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.main {
+  padding: 50px 0;
+}
+
+main .main_title {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+  padding-bottom: 30px;
+}
+
+.article .article_title {
+  text-align: center;
+  font-size: 28px;
+}
+
+.article .article_meta {
+  display: flex;
+  padding: 30px 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.article .article_meta ul li a {
+  line-height: 1;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #0293AD;
+  border: 1px solid #0293AD;
+  color: #0293AD;
+  text-decoration: none;
+}
+
+.article .article_meta time {
+  margin-left: auto;
+  font-size: 14px;
+}
+
+.article_image{
+  margin: 20px;
+  padding: 20px;
+}
+
+.postLinks {
+  display: flex;
+  margin-top: 50px;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
+
+.postLink {
+  width: 50%;
+  padding: 15px 0;
+}
+
+.postLink a {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.postLink-next {
+  text-align: right;
+}
+
+/*********************************
+8. sidebar
+*********************************/
+.archive {
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+
+.archive .archive_title {
+  font-size: 16px;
+  padding: 20px 10px;
+  line-height: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.archive .archive_list li {
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+  line-height: 1;
+}
+
+.archive .archive_list li a {
+  padding: 20px 10px;
+  display: block;
+  text-decoration: none;
+  position: relative;
+  line-height: 1;
+  -webkit-transition: all 300ms 0s ease;
+  -o-transition: all 300ms 0s ease;
+  transition: all 300ms 0s ease;
 }
